@@ -3,14 +3,13 @@
 include "../../koneksi/koneksi.php";
 
 $Lapor = "SELECT
-  id_inventaris,
-  nama_brg,
-  jenis_brg,
-  kondisi,
-  jumlah,
-  tgl_register
-
- FROM tbl_inventaris";
+`tbl_pengguna`.`id_pengguna`,
+ `tbl_pengguna`.`nama`,
+ `tbl_level`.`nama_level`
+ FROM
+ `tbl_pengguna`
+ INNER JOIN `tbl_level` ON `tbl_level`.`id_level` =
+`tbl_pengguna`.`id_level`";
 
 $Hasil = mysqli_query($connect, $Lapor);
 $Data = array();
@@ -20,12 +19,9 @@ while ($row = mysqli_fetch_assoc($Hasil)) {
 $Judul = "Laporan Peminjaman";
 $tgl = "Waktu : " . date("l, d F Y");
 $Header = array(
-  array("label" => "ID Inventaris", "length" => 40, "align" => "L"),
-  array("label" => "Nama Barang", "length" => 25, "align" => "L"),
-  array("label" => "Jenis Barang", "length" => 27, "align" => "L"),
-  array("label" => "Kondisi", "length" => 40, "align" => "L"),
-  array("label" => "Jumlah", "length" => 25, "align" => "L"),
-  array("label" => "Tgl Masuk", "length" => 27, "align" => "L"),
+  array("label" => "ID Petugas", "length" => 40, "align" => "L"),
+  array("label" => "Nama", "length" => 25, "align" => "L"),
+  array("label" => "Akses", "length" => 27, "align" => "L"),
 
 );
 require("../../assets/fpdf16/fpdf.php");

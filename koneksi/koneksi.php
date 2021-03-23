@@ -5,7 +5,7 @@ $password = ""; // Password (Isi jika menggunakan password)
 $database = "db_test"; // Nama databasenya
 $connect = mysqli_connect($host, $username, $password, $database); // Koneksi ke MySQL
 if ($connect) {
-  //echo "Berhasil";
+  // echo "Berhasil";
 } else {
-  //echo "Gagal";
+  // echo "Gagal";
 }

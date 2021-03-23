@@ -169,7 +169,7 @@ if ($akses1 != "L0001") {
         </a>
         <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
+            <h6 class="collapse-header">Peminjaman:</h6>
             <a class="collapse-item" href="index.php?page=peminjaman">Data Peminjaman</a>
             <a class="collapse-item" href="index.php?page=inp_peminjaman">Input Peminjaman</a>
           </div>

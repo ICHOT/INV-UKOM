@@ -5,8 +5,7 @@ include "../../login/proses_login.php";
   <div class="col-sm-4">
     <div class="page-header float-left">
       <div class="page-title">
-        <h1>Selamat Datang <?php echo
-                            $_SESSION['nama'] ?></h1>
+        <h1>Selamat Datang <?php echo $_SESSION['nama'] ?></h1>
       </div>
     </div>
   </div>
@@ -19,10 +18,10 @@ include "../../login/proses_login.php";
 <!------------------------------->
 <div class="content mt-3">
   <center>
-    <h4>Welcome to Inventory Management System
+    <!-- <h4>Welcome to Inventory Management System
       (Inventory)<br> SMK Letris Indonesia 2</h4>
     <br>
-    <img src="images/gg.png" height="50%" width="50%" />
+    <img src="images/gg.png" height="50%" width="50%" /> -->
     <br><br>
   </center>
   <!--ini isi konten-->

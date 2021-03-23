@@ -45,8 +45,7 @@ $autonumber = "PNJ-" . date('Ymdhis');
         </div>
         <div class="row form-group">
           <div class="col col-md-3"><label for="text-input" class=" formcontrol-label">Jumlah Pinjam</label></div>
-          <div class="col-12 col-md-9"><input type="number" name="jumlah" min="1" placeholder="Masukkan Jumlah" class="form-control" required="" onkeypress="return
-isAlphabetKey(event)" style="text-transform: capitalize;"></div>
+          <div class="col-12 col-md-9"><input type="number" name="jumlah" min="1" placeholder="Masukkan Jumlah" class="form-control" required="" onkeypress="return isAlphabetKey(event)" style="text-transform: capitalize;"></div>
         </div>
         <div class="row form-group">
           <div class="col col-md-3"><label for="text-input" class=" formcontrol-label">Tgl. Pinjam</label></div>

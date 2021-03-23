@@ -27,6 +27,7 @@ if (isset($_GET['page'])) {
       include 'pages/ubh_inventaris.php';
       break;
     case 'detail_inventaris':
+      // include 'pages/detail_inventaris.php';        
       include 'pages/detail_inventaris.php';
       break;
 
@@ -40,8 +41,8 @@ if (isset($_GET['page'])) {
       // include 'pages/input_peminjaman.php';
       include 'pages/tmb_peminjaman.php';
       break;
-    case 'peminjaman':
-      include 'pages/detail_peminjamanan.php';
+    case 'detail_peminjaman':
+      include 'pages/detail_peminjaman.php';
       break;
 
     default:

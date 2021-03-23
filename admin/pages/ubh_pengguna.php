@@ -31,8 +31,7 @@ $data = mysqli_fetch_array($sql);
               <option values="">Pilih
                 Akses</option>
               <?php
-              $sql = "SELECT * FROM
-tbl_level";
+              $sql = "SELECT * FROM tbl_level";
               $akses = $data['id_level'];
               $qry = mysqli_query($connect, $sql);
 
@@ -44,9 +43,7 @@ tbl_level";
                 } else {
                   $select = "";
                 }
-                echo "<option
-value='$hsl[id_level]'
-$select>$hsl[nama_level]</option>";
+                echo "<option value='$hsl[id_level]' $select>$hsl[nama_level]</option>";
               }
               ?>
 
@@ -55,8 +52,7 @@ $select>$hsl[nama_level]</option>";
         </div>
         <div class="row form-group">
           <div class="col col-md3"><label for="text-input" class=" form-controllabel">Password</label></div>
-          <div class="col-12 col-md9"><input type="password" id="text-input" name="password" placeholder="Masukkan Password" value="<?php echo $data['password'] ?>" class="formcontrol" required="" style="text-transform:
-capitalize;"></div>
+          <div class="col-12 col-md9"><input type="password" id="text-input" name="password" placeholder="Masukkan Password" value="<?php echo $data['password'] ?>" class="formcontrol" required="" style="text-transform:capitalize;"></div>
         </div>
 
     </div>
@@ -64,8 +60,7 @@ capitalize;"></div>
       <button type="submit" name="ubh_pengguna" class="btn btn-primary btn-sm">
         <i class="fa fa-dot-circleo"></i> Ubah
       </button>
-      <a href="index.php?page=pengguna" class="btn btn-danger
-btn-sm">
+      <a href="index.php?page=pengguna" class="btn btn-dangerbtn-sm">
         <i class="fa fa-ban"></i>
         Batal
       </a>

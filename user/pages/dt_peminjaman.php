@@ -22,24 +22,26 @@
             <a target="blank" align="right" href="pages/laporan_peminjaman.php" class="btn btn-danger"><i class="fa fa-print"></i> Cetak</a><br>
           </div>
           <div class="card-body">
-            <table id="bootstrap-data-table" class="table table-striped table-bordered">
-              <thead>
-                <tr align="center">
-                  <th>No.</th>
-                  <th>ID Peminjaman</th>
-                  <th>Peminjam</th>
-                  <th>Nama Barang</th>
-                  <th>Tanggal Pinjam</th>
-                  <th>Tanggal Kembali</th>
-                  <th>Status</th>
-                  <!-- <th>Aksi <span class="ti-settings"></span></th> -->
-                </tr>
-              </thead>
-              <tbody>
-                <?php
+            <div class="table-responsive">
+              <table id="bootstrap-data-table dataTable" class="table table-striped table-bordered">
+                <!-- <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"> -->
+                <thead>
+                  <tr align="center">
+                    <th>No.</th>
+                    <th>ID Peminjaman</th>
+                    <th>Peminjam</th>
+                    <th>Nama Barang</th>
+                    <th>Tanggal Pinjam</th>
+                    <th>Tanggal Kembali</th>
+                    <th>Status</th>
+                    <!-- <th>Aksi <span class="ti-settings"></span></th> -->
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php
 
 
-                $query = "SELECT `tbl_peminjaman`.`id_peminjam`,
+                  $query = "SELECT `tbl_peminjaman`.`id_peminjam`,
 `tbl_peminjaman`.`tgl_pinjam`,
 `tbl_peminjaman`.`tgl_kembali`,
 `tbl_peminjaman`.`jumlah`,
@@ -50,41 +52,42 @@
 `tbl_peminjaman`.`id_inventaris` FROM `tbl_inventaris` INNER JOIN `tbl_peminjaman` ON
 `tbl_peminjaman`.`id_inventaris` = `tbl_inventaris`.`id_inventaris` INNER JOIN `tbl_pengguna` ON
 `tbl_peminjaman`.`id_pengguna` = `tbl_pengguna`.`id_pengguna`";
-                $sql = mysqli_query($connect, $query);
-                $no = 1;
-                while ($data = mysqli_fetch_array($sql)) {
-                  echo "<tr class='gradeA'>";
-                  echo "<td><center><b>" . $no . "</b></td>";
-                  echo "<td><center>" . $data['id_peminjam'] . "</td>";
-                  echo "<td><center>" . $data['nama'] . "</center></td>";
-                  echo "<td><center>" . $data['nama_brg'] . "</center></td>";
-                  echo "<td><center>" . $data['tgl_pinjam'] . "</center></td>";
-                  echo "<td><center>" . $data['tgl_kembali'] . "</center></td>";
-                  if ($data['status_peminjaman'] == "Dipinjam") {
-                    echo "<td><center>
+                  $sql = mysqli_query($connect, $query);
+                  $no = 1;
+                  while ($data = mysqli_fetch_array($sql)) {
+                    echo "<tr class='gradeA'>";
+                    echo "<td><center><b>" . $no . "</b></td>";
+                    echo "<td><center>" . $data['id_peminjam'] . "</td>";
+                    echo "<td><center>" . $data['nama'] . "</center></td>";
+                    echo "<td><center>" . $data['nama_brg'] . "</center></td>";
+                    echo "<td><center>" . $data['tgl_pinjam'] . "</center></td>";
+                    echo "<td><center>" . $data['tgl_kembali'] . "</center></td>";
+                    if ($data['status_peminjaman'] == "Dipinjam") {
+                      echo "<td><center>
   <font color='red'><b>" . $data['status_peminjaman'] . "</b></font></center></td>";
-                  } else {
-                    echo "<td><center><font color='blue'><b>" . $data['status_peminjaman'] . "</b></font></center></td>";
-                  }
+                    } else {
+                      echo "<td><center><font color='blue'><b>" . $data['status_peminjaman'] . "</b></font></center></td>";
+                    }
 
-                  echo "<td>";
-                ?>
-                  <!-- <a class="btn btn-warning" href="javascript: if (confirm('Apakah anda yakiningin menghapus data?')) { window.location.href='proses/proses_peminjaman.php?id=<?php echo
-                                                                                                                                                                                    $data['id_peminjam']; ?>' } else { void('') }; "><i class="fas fa-trash-alt"></i></a>
+                    // echo "<td>";
+                  ?>
+                    <!-- <a class="btn btn-warning" href="javascript: if (confirm('Apakah anda yakiningin menghapus data?')) { window.location.href='proses/proses_peminjaman.php?id=<?php echo
+                                                                                                                                                                                      $data['id_peminjam']; ?>' } else { void('') }; "><i class="fas fa-trash-alt"></i></a>
                   <a class="btn btn-primary" target="blank" href="index.php?page=detail_peminjaman&&id=<?php echo $data["id_peminjam"] ?>"> <i class="fas fa-info"></i>
                   </a>
                   </td> -->
-                <?php
-                  echo "</tr>";
-                  $no++;
-                }
+                  <?php
+                    echo "</tr>";
+                    $no++;
+                  }
 
-                ?>
+                  ?>
 
 
 
-              </tbody>
-            </table>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
