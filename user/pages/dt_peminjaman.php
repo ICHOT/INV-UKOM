@@ -1,3 +1,7 @@
+<?php
+// $id_p = $_SESSION['id_pengguna'];
+
+?>
 <div class="breadcrumbs">
   <div class="col-sm-4">
     <h1>Data Peminjaman</h1>
@@ -19,7 +23,7 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-            <a target="blank" align="right" href="pages/laporan_peminjaman.php" class="btn btn-danger"><i class="fa fa-print"></i> Cetak</a><br>
+            <!-- <a target="blank" align="right" href="pages/laporan_peminjaman.php" class="btn btn-danger"><i class="fa fa-print"></i> Cetak</a><br> -->
           </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -39,19 +43,20 @@
                 </thead>
                 <tbody>
                   <?php
-
-
+                  $id_p = "$_SESSION[id_pengguna]";
                   $query = "SELECT `tbl_peminjaman`.`id_peminjam`,
-`tbl_peminjaman`.`tgl_pinjam`,
-`tbl_peminjaman`.`tgl_kembali`,
-`tbl_peminjaman`.`jumlah`,
-`tbl_peminjaman`.`status_peminjaman`,
-`tbl_inventaris`.`nama_brg`,
-`tbl_pengguna`.`nama`,
-`tbl_peminjaman`.`id_pengguna`,
-`tbl_peminjaman`.`id_inventaris` FROM `tbl_inventaris` INNER JOIN `tbl_peminjaman` ON
-`tbl_peminjaman`.`id_inventaris` = `tbl_inventaris`.`id_inventaris` INNER JOIN `tbl_pengguna` ON
-`tbl_peminjaman`.`id_pengguna` = `tbl_pengguna`.`id_pengguna`";
+                          `tbl_peminjaman`.`tgl_pinjam`,
+                          `tbl_peminjaman`.`tgl_kembali`,
+                          `tbl_peminjaman`.`jumlah`,
+                          `tbl_peminjaman`.`status_peminjaman`,
+                          `tbl_inventaris`.`nama_brg`,
+                          `tbl_pengguna`.`nama`,
+                          `tbl_peminjaman`.`id_pengguna`,
+                          `tbl_peminjaman`.`id_inventaris` FROM `tbl_inventaris` INNER JOIN `tbl_peminjaman` ON
+                          `tbl_peminjaman`.`id_inventaris` = `tbl_inventaris`.`id_inventaris` INNER JOIN `tbl_pengguna` ON
+                          `tbl_peminjaman`.`id_pengguna` = `tbl_pengguna`.`id_pengguna`
+                          WHERE `tbl_pengguna`.`id_pengguna` = '$id_p' 
+                          ";
                   $sql = mysqli_query($connect, $query);
                   $no = 1;
                   while ($data = mysqli_fetch_array($sql)) {

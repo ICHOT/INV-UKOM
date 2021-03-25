@@ -38,7 +38,7 @@ if (isset($_GET['page'])) {
       // case 'inp_peminjaman':
       //   include 'pages/input_peminjaman.php';
       //   break;
-    case 'peminjaman':
+    case "peminjaman":
       include 'pages/dt_peminjaman.php';
       break;
 

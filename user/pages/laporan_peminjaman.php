@@ -1,7 +1,7 @@
 <?php
-
+// echo $_SESSION['nama']; 
 include "../../koneksi/koneksi.php";
-
+// $id_p = "$_SESSION[id_pengguna]";
 $Lapor = "SELECT
 `tbl_peminjaman`.`id_peminjam`,
 `tbl_peminjaman`.`tgl_pinjam`,
@@ -13,7 +13,9 @@ $Lapor = "SELECT
 INNER JOIN 
 `tbl_peminjaman` ON `tbl_inventaris`.`id_inventaris` =
 `tbl_peminjaman`.`id_inventaris`
-INNER JOIN `tbl_pengguna` ON `tbl_pengguna`.`id_pengguna` = `tbl_peminjaman`.`id_pengguna`";
+INNER JOIN `tbl_pengguna` ON `tbl_pengguna`.`id_pengguna` = `tbl_peminjaman`.`id_pengguna` ";
+
+
 
 $Hasil = mysqli_query($connect, $Lapor);
 $Data = array();

@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+// error_reporting(0);
 include "../koneksi/koneksi.php";
 session_start();
 if (empty($_SESSION['id_pengguna'])) {
